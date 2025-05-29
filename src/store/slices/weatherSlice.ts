@@ -75,10 +75,12 @@ export const fetchWeatherByCity = createAsyncThunk(
 
 interface WeatherState {
     data: WeatherData[] | null;
+    error: boolean;
 }
 
 const initialState: WeatherState = {
     data: null,
+    error: false,
 }
 
 const weatherSlice = createSlice({
@@ -86,9 +88,15 @@ const weatherSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchWeatherByCity.fulfilled, (state, action: PayloadAction<WeatherData[]>) => {
-            state.data = action.payload
-        })
+        builder
+            .addCase(fetchWeatherByCity.fulfilled, (state, action: PayloadAction<WeatherData[]>) => {
+                state.data = action.payload
+                state.error = false;
+            })
+            .addCase(fetchWeatherByCity.rejected, (state) => {
+                state.data = null;
+                state.error = true;
+            })
     }
 })
 

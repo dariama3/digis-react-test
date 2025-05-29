@@ -5,7 +5,7 @@ import CityChart from "./components/CityChart";
 function App() {
   return (
     <div className="App">
-      <main>
+      <main className="wrapper">
         <CitySearch />
         <CityChart />
       </main>
