@@ -1,5 +1,5 @@
-import './App.css';
-import CitySearch from './components/CitySearch';
+import "./App.css";
+import CitySearch from "./components/CitySearch";
 import CityChart from "./components/CityChart";
 
 function App() {
