@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Environment variables
+
+Get and set your [Weather API](https://openweathermap.org/api) key in `.env` file
+
 ## Available Scripts
 
 In the project directory, you can run:
